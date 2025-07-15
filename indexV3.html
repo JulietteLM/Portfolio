@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliette Le Meudec - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Crimson+Text:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            color: #2c2c2c;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        img.zoomable {
+            cursor: zoom-in;
+            float: right;
+            width: 30%;
+            height: auto;
+            margin: 10px;
+        }
+
+        /* Animated Watercolor Background - Style Aquarelle */
+        .watercolor-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #4a90a4, #5aa469, #b8860b, #cd853f, #9370db);
+            background-size: 400% 400%;
+            animation: aquarelleFlow 20s ease-in-out infinite;
+        }
+
+        .watercolor-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse 120% 80% at 10% 20%, rgba(74, 144, 164, 0.8) 0%, transparent 40%),
+                    radial-gradient(ellipse 80% 150% at 90% 80%, rgba(184, 134, 11, 0.7) 0%, transparent 45%),
+                    radial-gradient(ellipse 200% 60% at 50% 10%, rgba(147, 112, 219, 0.6) 0%, transparent 50%),
+                    radial-gradient(ellipse 90% 120% at 80% 40%, rgba(205, 133, 63, 0.5) 0%, transparent 35%),
+                    radial-gradient(ellipse 150% 90% at 20% 90%, rgba(90, 164, 105, 0.7) 0%, transparent 45%),
+                    radial-gradient(ellipse 60% 180% at 60% 60%, rgba(178, 34, 34, 0.4) 0%, transparent 30%);
+            animation: aquarelleBleed 25s ease-in-out infinite;
+            filter: blur(1px);
+        }
+
+        .watercolor-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse 100% 200% at 30% 0%, rgba(255, 140, 0, 0.3) 0%, transparent 25%),
+                    radial-gradient(ellipse 180% 80% at 70% 100%, rgba(32, 178, 170, 0.4) 0%, transparent 35%),
+                    radial-gradient(ellipse 70% 150% at 100% 50%, rgba(186, 85, 211, 0.3) 0%, transparent 30%),
+                    radial-gradient(ellipse 150% 100% at 0% 70%, rgba(220, 20, 60, 0.25) 0%, transparent 25%);
+            animation: aquarelleDiffusion 30s ease-in-out infinite reverse;
+            filter: blur(2px);
+        }
+
+        @keyframes aquarelleFlow {
+            0% {
+                background-position: 0% 50%;
+                transform: scale(1) rotate(0deg);
+                filter: hue-rotate(0deg) saturate(1);
+            }
+            25% {
+                background-position: 100% 25%;
+                transform: scale(1.05) rotate(1deg);
+                filter: hue-rotate(5deg) saturate(1.1);
+            }
+            50% {
+                background-position: 75% 100%;
+                transform: scale(0.95) rotate(-0.5deg);
+                filter: hue-rotate(-3deg) saturate(0.9);
+            }
+            75% {
+                background-position: 25% 75%;
+                transform: scale(1.02) rotate(0.8deg);
+                filter: hue-rotate(8deg) saturate(1.05);
+            }
+            100% {
+                background-position: 0% 50%;
+                transform: scale(1) rotate(0deg);
+                filter: hue-rotate(0deg) saturate(1);
+            }
+        }
+
+        @keyframes aquarelleBleed {
+            0% {
+                background:
+                        radial-gradient(ellipse 120% 80% at 10% 20%, rgba(74, 144, 164, 0.8) 0%, transparent 40%),
+                        radial-gradient(ellipse 80% 150% at 90% 80%, rgba(184, 134, 11, 0.7) 0%, transparent 45%),
+                        radial-gradient(ellipse 200% 60% at 50% 10%, rgba(147, 112, 219, 0.6) 0%, transparent 50%),
+                        radial-gradient(ellipse 90% 120% at 80% 40%, rgba(205, 133, 63, 0.5) 0%, transparent 35%),
+                        radial-gradient(ellipse 150% 90% at 20% 90%, rgba(90, 164, 105, 0.7) 0%, transparent 45%),
+                        radial-gradient(ellipse 60% 180% at 60% 60%, rgba(178, 34, 34, 0.4) 0%, transparent 30%);
+                transform: scale(1) rotate(0deg);
+                filter: blur(1px) saturate(1);
+            }
+            20% {
+                background:
+                        radial-gradient(ellipse 180% 60% at 30% 70%, rgba(74, 144, 164, 0.6) 0%, transparent 45%),
+                        radial-gradient(ellipse 100% 200% at 20% 30%, rgba(184, 134, 11, 0.8) 0%, transparent 50%),
+                        radial-gradient(ellipse 150% 100% at 80% 90%, rgba(147, 112, 219, 0.5) 0%, transparent 40%),
+                        radial-gradient(ellipse 120% 80% at 10% 10%, rgba(205, 133, 63, 0.7) 0%, transparent 45%),
+                        radial-gradient(ellipse 80% 160% at 90% 20%, rgba(90, 164, 105, 0.6) 0%, transparent 35%),
+                        radial-gradient(ellipse 200% 70% at 40% 80%, rgba(178, 34, 34, 0.5) 0%, transparent 40%);
+                transform: scale(1.1) rotate(2deg);
+                filter: blur(1.5px) saturate(1.2);
+            }
+            40% {
+                background:
+                        radial-gradient(ellipse 90% 200% at 80% 10%, rgba(74, 144, 164, 0.9) 0%, transparent 50%),
+                        radial-gradient(ellipse 160% 70% at 60% 90%, rgba(184, 134, 11, 0.6) 0%, transparent 35%),
+                        radial-gradient(ellipse 100% 180% at 20% 40%, rgba(147, 112, 219, 0.8) 0%, transparent 55%),
+                        radial-gradient(ellipse 200% 90% at 90% 70%, rgba(205, 133, 63, 0.4) 0%, transparent 30%),
+                        radial-gradient(ellipse 70% 140% at 10% 60%, rgba(90, 164, 105, 0.8) 0%, transparent 50%),
+                        radial-gradient(ellipse 140% 100% at 70% 20%, rgba(178, 34, 34, 0.6) 0%, transparent 45%);
+                transform: scale(0.9) rotate(-1deg);
+                filter: blur(2px) saturate(0.8);
+            }
+            60% {
+                background:
+                        radial-gradient(ellipse 200% 100% at 40% 80%, rgba(74, 144, 164, 0.5) 0%, transparent 35%),
+                        radial-gradient(ellipse 90% 180% at 80% 20%, rgba(184, 134, 11, 0.9) 0%, transparent 60%),
+                        radial-gradient(ellipse 160% 80% at 10% 90%, rgba(147, 112, 219, 0.4) 0%, transparent 30%),
+                        radial-gradient(ellipse 80% 200% at 70% 50%, rgba(205, 133, 63, 0.7) 0%, transparent 50%),
+                        radial-gradient(ellipse 180% 60% at 30% 10%, rgba(90, 164, 105, 0.5) 0%, transparent 35%),
+                        radial-gradient(ellipse 100% 160% at 90% 90%, rgba(178, 34, 34, 0.8) 0%, transparent 55%);
+                transform: scale(1.05) rotate(1.5deg);
+                filter: blur(1px) saturate(1.1);
+            }
+            80% {
+                background:
+                        radial-gradient(ellipse 140% 180% at 70% 30%, rgba(74, 144, 164, 0.7) 0%, transparent 45%),
+                        radial-gradient(ellipse 200% 80% at 10% 70%, rgba(184, 134, 11, 0.5) 0%, transparent 35%),
+                        radial-gradient(ellipse 80% 140% at 90% 20%, rgba(147, 112, 219, 0.9) 0%, transparent 60%),
+                        radial-gradient(ellipse 160% 100% at 30% 90%, rgba(205, 133, 63, 0.6) 0%, transparent 40%),
+                        radial-gradient(ellipse 100% 200% at 80% 80%, rgba(90, 164, 105, 0.4) 0%, transparent 30%),
+                        radial-gradient(ellipse 180% 90% at 20% 40%, rgba(178, 34, 34, 0.7) 0%, transparent 50%);
+                transform: scale(0.95) rotate(-0.8deg);
+                filter: blur(1.8px) saturate(0.9);
+            }
+            100% {
+                background:
+                        radial-gradient(ellipse 120% 80% at 10% 20%, rgba(74, 144, 164, 0.8) 0%, transparent 40%),
+                        radial-gradient(ellipse 80% 150% at 90% 80%, rgba(184, 134, 11, 0.7) 0%, transparent 45%),
+                        radial-gradient(ellipse 200% 60% at 50% 10%, rgba(147, 112, 219, 0.6) 0%, transparent 50%),
+                        radial-gradient(ellipse 90% 120% at 80% 40%, rgba(205, 133, 63, 0.5) 0%, transparent 35%),
+                        radial-gradient(ellipse 150% 90% at 20% 90%, rgba(90, 164, 105, 0.7) 0%, transparent 45%),
+                        radial-gradient(ellipse 60% 180% at 60% 60%, rgba(178, 34, 34, 0.4) 0%, transparent 30%);
+                transform: scale(1) rotate(0deg);
+                filter: blur(1px) saturate(1);
+            }
+        }
+
+        @keyframes aquarelleDiffusion {
+            0% {
+                background:
+                        radial-gradient(ellipse 100% 200% at 30% 0%, rgba(255, 140, 0, 0.3) 0%, transparent 25%),
+                        radial-gradient(ellipse 180% 80% at 70% 100%, rgba(32, 178, 170, 0.4) 0%, transparent 35%),
+                        radial-gradient(ellipse 70% 150% at 100% 50%, rgba(186, 85, 211, 0.3) 0%, transparent 30%),
+                        radial-gradient(ellipse 150% 100% at 0% 70%, rgba(220, 20, 60, 0.25) 0%, transparent 25%);
+                transform: translate(0px, 0px);
+            }
+            25% {
+                background:
+                        radial-gradient(ellipse 150% 120% at 80% 30%, rgba(255, 140, 0, 0.4) 0%, transparent 30%),
+                        radial-gradient(ellipse 90% 200% at 20% 60%, rgba(32, 178, 170, 0.3) 0%, transparent 25%),
+                        radial-gradient(ellipse 180% 70% at 40% 90%, rgba(186, 85, 211, 0.5) 0%, transparent 40%),
+                        radial-gradient(ellipse 80% 180% at 90% 10%, rgba(220, 20, 60, 0.35) 0%, transparent 35%);
+                transform: translate(5px, -3px);
+            }
+            50% {
+                background:
+                        radial-gradient(ellipse 80% 180% at 10% 80%, rgba(255, 140, 0, 0.2) 0%, transparent 20%),
+                        radial-gradient(ellipse 200% 100% at 90% 20%, rgba(32, 178, 170, 0.5) 0%, transparent 40%),
+                        radial-gradient(ellipse 100% 200% at 60% 10%, rgba(186, 85, 211, 0.25) 0%, transparent 25%),
+                        radial-gradient(ellipse 160% 90% at 30% 90%, rgba(220, 20, 60, 0.4) 0%, transparent 30%);
+                transform: translate(-2px, 4px);
+            }
+            75% {
+                background:
+                        radial-gradient(ellipse 200% 90% at 60% 70%, rgba(255, 140, 0, 0.35) 0%, transparent 35%),
+                        radial-gradient(ellipse 100% 160% at 10% 90%, rgba(32, 178, 170, 0.25) 0%, transparent 20%),
+                        radial-gradient(ellipse 140% 120% at 80% 30%, rgba(186, 85, 211, 0.4) 0%, transparent 35%),
+                        radial-gradient(ellipse 90% 200% at 70% 60%, rgba(220, 20, 60, 0.2) 0%, transparent 25%);
+                transform: translate(3px, 2px);
+            }
+            100% {
+                background:
+                        radial-gradient(ellipse 100% 200% at 30% 0%, rgba(255, 140, 0, 0.3) 0%, transparent 25%),
+                        radial-gradient(ellipse 180% 80% at 70% 100%, rgba(32, 178, 170, 0.4) 0%, transparent 35%),
+                        radial-gradient(ellipse 70% 150% at 100% 50%, rgba(186, 85, 211, 0.3) 0%, transparent 30%),
+                        radial-gradient(ellipse 150% 100% at 0% 70%, rgba(220, 20, 60, 0.25) 0%, transparent 25%);
+                transform: translate(0px, 0px);
+            }
+        }
+
+        /* Rivière de navigation */
+        .river-path {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .river-flow {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: riverFlow 15s linear infinite;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .river-flow:nth-child(2) { animation-delay: -3s; }
+        .river-flow:nth-child(3) { animation-delay: -6s; }
+        .river-flow:nth-child(4) { animation-delay: -9s; }
+        .river-flow:nth-child(5) { animation-delay: -12s; }
+
+        @keyframes riverFlow {
+            0% {
+                left: 10%;
+                top: 15%;
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            25% {
+                left: 85%;
+                top: 20%;
+                transform: scale(1.2);
+            }
+            50% {
+                left: 90%;
+                top: 75%;
+                transform: scale(0.8);
+            }
+            75% {
+                left: 15%;
+                top: 80%;
+                transform: scale(1);
+            }
+            95% {
+                opacity: 1;
+            }
+            100% {
+                left: 10%;
+                top: 15%;
+                opacity: 0;
+            }
+        }
+
+        /* Conteneur principal */
+        .container {
+            height: 100vh;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+
+        /* Sections du portfolio positionnées le long de la rivière */
+        .portfolio-section {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            min-width: 280px;
+            max-width: 350px;
+
+        }
+
+        .portfolio-section:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        .portfolio-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #4a90a4;
+            padding-bottom: 0.5rem;
+        }
+
+        .portfolio-section p, .portfolio-section li {
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            color: #444;
+        }
+
+        .portfolio-section ul {
+            list-style: none;
+        }
+
+        .portfolio-section li::before {
+            content: "◆";
+            color: #4a90a4;
+            margin-right: 0.5rem;
+        }
+
+        /* Positionnement des sections le long de la rivière */
+        .header-section {
+            top: 5%;
+            left: 45%;
+            /*transform: translateX(-50%);*/
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .header-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-section .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .about-section {
+            top: 15%;
+            right: 3%;
+            animation: floatRight 8s ease-in-out infinite;
+        }
+
+        .projects-section {
+            top: 40%;
+            right: 15%;
+            animation: floatBottomRight 10s ease-in-out infinite;
+        }
+        .teaching-section {
+            top: 35%;
+            left: 2%;
+            animation: floatLeft 12s ease-in-out infinite;
+        }
+
+        .experience-section {
+            top: 60%;
+            left: 8%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: floatLeft 6s ease-in-out infinite;
+        }
+
+
+        .contact-section {
+            top: 65%;
+            left: 40%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: floatCenter 9s ease-in-out infinite;
+        }
+
+        @keyframes floatRight {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+
+        @keyframes floatBottomRight {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(-0.5deg); }
+        }
+
+        @keyframes floatLeft {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(0.8deg); }
+        }
+
+        @keyframes floatCenter {
+            0%, 100% { transform: translateX(-50%) translateY(0px) rotate(0deg); }
+            50% { transform: translateX(-50%) translateY(-12px) rotate(-0.3deg); }
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .projects-inside-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(74, 144, 164, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: #4a90a4;
+            transform: scale(1.02);
+        }
+
+        .project-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #4a90a4;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 25px;
+        }
+
+        .contact-links a:hover {
+            color: #2c2c2c;
+            border-color: #4a90a4;
+            background: rgba(74, 144, 164, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Vintage Paper Texture Overlay */
+        .vintage-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            background-image:
+                    radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.02) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.02) 0%, transparent 50%);
+            mix-blend-mode: multiply;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .portfolio-section {
+                position: relative;
+                margin: 1rem;
+                animation: none !important;
+            }
+
+            .container {
+                height: auto;
+                overflow-y: auto;
+                padding: 1rem;
+            }
+
+            .header-section {
+                position: relative;
+                transform: none;
+                top: auto;
+                left: auto;
+            }
+
+            .about-section, .projects-section, .teaching-section,.experience-section,  .contact-section {
+                position: relative;
+                top: auto;
+                left: auto;
+                right: auto;
+                bottom: auto;
+                transform: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2rem;
+            }
+
+            .portfolio-section {
+                padding: 1.5rem;
+                min-width: auto;
+                max-width: none;
+            }
+
+            .portfolio-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.8s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 0, 0, 0.1);
+            color: #ff0000;
+            transform: scale(1.1);
+        }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2c2c2c;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #4a90a4;
+            padding-bottom: 1rem;
+        }
+
+        .modal p, .modal li {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        /* Backgrounds ultra-clairs pour modales de projets - Texte foncé */
+
+        .project-modal-content-treeam {
+            background: linear-gradient(135deg,
+            #e8f5e8,
+            #f0f8f0,
+            #f5fbf5,
+            #fafefafa
+            );
+            background-size: 400% 400%;
+            animation: greenWave 15s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-modal-content-treeam::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse 80% 120% at 20% 30%, #d4f1d4 0%, transparent 50%),
+                    radial-gradient(ellipse 120% 80% at 80% 70%, #c8eec8 0%, transparent 60%),
+                    radial-gradient(ellipse 100% 100% at 50% 50%, #e0f7e0 0%, transparent 40%);
+            animation: leafPattern 10s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.4;
+        }
+
+        .project-modal-content-vr {
+            background: linear-gradient(135deg,
+            #e6e8ff,
+            #f0f2ff,
+            #f8f9ff,
+            #fdfeff
+            );
+            background-size: 400% 400%;
+            animation: cosmicWave 18s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-modal-content-vr::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse 90% 150% at 10% 20%, #d1d9ff 0%, transparent 60%),
+                    radial-gradient(ellipse 100% 100% at 50% 50%, #c4d1ff 0%, transparent 40%),
+                    radial-gradient(ellipse 120% 80% at 80% 80%, #e0e6ff 0%, transparent 50%);
+            animation: cosmicPattern 22s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .project-modal-content-submersion {
+            background: linear-gradient(135deg,
+            #e1f4fd,
+            #f0f9fe,
+            #f7fcff,
+            #fdffff
+            );
+            background-size: 400% 400%;
+            animation: oceanWave 16s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-modal-content-submersion::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse 120% 80% at 30% 20%, #b8e6f7 0%, transparent 50%),
+                    radial-gradient(ellipse 80% 150% at 70% 80%, #cbeef9 0%, transparent 60%),
+                    radial-gradient(ellipse 100% 100% at 50% 50%, #ddf3fb 0%, transparent 40%);
+            animation: wavePattern 22s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.4;
+        }
+
+        .project-modal-content-artgame {
+            background: linear-gradient(135deg,
+            #fff4e6,
+            #fff8f0,
+            #fffbf7,
+            #fffeff
+            );
+            background-size: 400% 400%;
+            animation: fireWave 14s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-modal-content-artgame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse 100% 120% at 20% 30%, #ffe4cc 0%, transparent 50%),
+                    radial-gradient(ellipse 120% 80% at 80% 70%, #ffeedd 0%, transparent 60%),
+                    radial-gradient(ellipse 80% 100% at 50% 50%, #fff2e8 0%, transparent 40%);
+            animation: flamePattern 18s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .project-modal-content-escapeGame {
+            background: linear-gradient(135deg,
+            #eae4ff,
+            #ddd9ff,
+            #c9d4ff,
+            #dcd0ff
+            );
+            background-size: 400% 400%;
+            animation: mysteryWave 20s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-modal-content-escapeGame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse  120% 80% at 30% 20%, #f1e4ff 0%, transparent 50%),
+                    radial-gradient(ellipse 80% 150% at 70% 80%, #ede7ff 0%, transparent 60%),
+                    radial-gradient(ellipse 100% 100% at 50% 50%, #e0e7ff 0%, transparent 40%);
+            animation: shadowPattern 25s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+
+        .project-modal-content-butterfly {
+            background: linear-gradient(135deg,
+            #e1f4fd,
+            #f0f9fe,
+            #f7fcff,
+            #fdffff
+            );
+            background-size: 400% 400%;
+            animation: butterflyWave 16s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-modal-content-butterfly::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse 120% 80% at 30% 20%, rgba(222, 184, 247, 0.73) 0%, transparent 50%),
+                    radial-gradient(ellipse 80% 150% at 70% 80%, #e7cbf9 0%, transparent 60%),
+                    radial-gradient(ellipse 100% 100% at 50% 50%, #f1ddfb 0%, transparent 40%);
+            animation: butterflyPattern 22s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.4;
+        }
+
+        /* Styles pour le texte foncé */
+        .project-modal-content-treeam > *,
+        .project-modal-content-vr > *,
+        .project-modal-content-submersion > *,
+        .project-modal-content-artgame > *,
+        .project-modal-content-butterfly > *,
+        .project-modal-content-escapeGame>*{
+            position: relative;
+            z-index: 2;
+            color: #2c3e50; /* Texte foncé principal */
+            text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.8); /* Ombre claire pour la lisibilité */
+        }
+
+        .project-modal-content-treeam h2,
+        .project-modal-content-vr h2,
+        .project-modal-content-submersion h2,
+        .project-modal-content-artgame h2,
+        .project-modal-content-escapeGame h2{
+            color: #1a252f; /* Titres plus foncés */
+            border-bottom-color: rgba(44, 62, 80, 0.3);
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
+        }
+
+        .project-modal-content-treeam p,
+        .project-modal-content-treeam li {
+            color: #2d5a3d; /* Vert foncé pour le thème nature */
+        }
+
+        .project-modal-content-vr p,
+        .project-modal-content-vr li {
+            color: #2c3e50; /* Bleu-gris foncé pour le thème VR */
+        }
+
+        .project-modal-content-submersion p,
+        .project-modal-content-submersion li {
+            color: #1f4e5f; /* Bleu foncé pour le thème océan */
+        }
+
+        .project-modal-content-artgame p,
+        .project-modal-content-artgame li {
+            color: #8b4513; /* Brun foncé pour le thème art/feu */
+        }
+
+        .project-modal-content-escapeGame p,
+        .project-modal-content-escapeGame li {
+            color: #3d138b; /* Violet foncé pour le thème art/feu */
+        }
+
+        /* Animations optimisées pour backgrounds clairs - SANS FILTRES */
+        @keyframes greenWave {
+            0%, 100% {
+                background-position: 0% 50%;
+                transform:  rotate(0deg);
+            }
+            25% {
+                background-position: 100% 25%;
+                transform: rotate(0.2deg);
+            }
+            50% {
+                background-position: 75% 100%;
+                transform:  rotate(-0.2deg);
+            }
+            75% {
+                background-position: 25% 75%;
+                transform:  rotate(0.2deg);
+            }
+        }
+
+        @keyframes cosmicWave {
+            0%, 100% {
+                background-position: 0% 50%;
+                transform: scale(1) rotate(0deg);
+            }
+            33% {
+                background-position: 100% 30%;
+                transform: scale(1.01) rotate(0.2deg);
+            }
+            66% {
+                background-position: 50% 100%;
+                transform: scale(0.99) rotate(-0.2deg);
+            }
+        }
+
+        @keyframes oceanWave {
+            0%, 100% {
+                background-position: 0% 50%;
+                transform: scale(1) rotate(0deg);
+            }
+            25% {
+                background-position: 30% 80%;
+                transform: scale(1.0001) rotate(0.2deg);
+            }
+            50% {
+                background-position: 100% 50%;
+                transform: scale(1.001) rotate(0.1deg);
+            }
+            75% {
+                background-position: 70% 20%;
+                transform: scale(0.99) rotate(-0.1deg);
+            }
+        }
+
+        @keyframes fireWave {
+            0%, 100% {
+                background-position: 0% 50%;
+                transform: rotate(0deg);
+            }
+            25% {
+                background-position: 80% 20%;
+                transform: rotate(0.2deg);
+            }
+            50% {
+                background-position: 100% 80%;
+                transform: rotate(-0.2deg);
+            }
+            75% {
+                background-position: 20% 100%;
+                transform:  rotate(0.1deg);
+            }
+        }
+
+        @keyframes butterflyWave {
+            0%, 100% {
+                background-position: 0% 50%;
+                transform: scale(1) rotate(0deg);
+            }
+            25% {
+                background-position: 30% 80%;
+                transform: scale(1.0001) rotate(0.2deg);
+            }
+            50% {
+                background-position: 100% 50%;
+                transform: scale(1.001) rotate(0.1deg);
+            }
+            75% {
+                background-position: 70% 20%;
+                transform: scale(0.99) rotate(-0.1deg);
+            }
+        }
+
+        /* Animations pour éléments décoratifs (plus subtiles) */
+        @keyframes leafPattern {
+            0%, 100% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateX(5px) translateY(-3px) rotate(1deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateX(-3px) translateY(5px) rotate(-0.5deg);
+                opacity: 0.6;
+            }
+            75% {
+                transform: translateX(2px) translateY(-2px) rotate(0.8deg);
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes cosmicPattern {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            33% {
+                transform: translateX(3px) translateY(-2px) scale(1.01) rotate(0.3deg);
+                opacity: 0.7;
+            }
+            66% {
+                transform: translateX(-2px) translateY(3px) scale(0.99) rotate(-0.2deg);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes wavePattern {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                opacity: 1;
+            }
+            33% {
+                transform: translateX(3px) translateY(-5px) scale(1.02);
+                opacity: 0.7;
+            }
+            66% {
+                transform: translateX(-2px) translateY(3px) scale(0.98);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes flamePattern {
+            0%, 100% {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(-2px) scale(1.001) rotate(0.5deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(2px) scale(0.99) rotate(-0.3deg);
+                opacity: 0.6;
+            }
+            75% {
+                transform: translateY(-1px) scale(1.005) rotate(0.2deg);
+                opacity: 0.9;
+            }
+        }
+
+
+
+        @keyframes shadowPattern {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                opacity: 1;
+            }
+            33% {
+                transform: translateX(3px) translateY(-5px) scale(1.02);
+                opacity: 0.7;
+            }
+            66% {
+                transform: translateX(-2px) translateY(3px) scale(0.98);
+                opacity: 0.8;
+            }
+        }
+        @keyframes butterflyPattern {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                opacity: 1;
+            }
+            33% {
+                transform: translateX(3px) translateY(-5px) scale(1.02);
+                opacity: 0.7;
+            }
+            66% {
+                transform: translateX(-2px) translateY(3px) scale(0.98);
+                opacity: 0.8;
+            }
+        }
+
+
+
+        /* ===== STYLE AGRUMES ===== */
+        .project-modal-content-citrus {
+            background: linear-gradient(135deg,
+            #fff9ec,
+            #ffeedc,
+            #ffe5c5,
+            #ffd8a8,
+            #ffcc80
+            );
+            background-size: 500% 500%;
+            animation: citrusWave 12s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-modal-content-citrus::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse 90% 60% at 15% 25%, #fff4d2 0%, transparent 65%),
+                    radial-gradient(ellipse 70% 90% at 85% 15%, #fff59d 0%, transparent 55%),
+                    radial-gradient(ellipse 100% 70% at 30% 85%, #ffe082 0%, transparent 60%),
+                    radial-gradient(ellipse 60% 100% at 75% 75%, #ffccbc 0%, transparent 70%),
+                    radial-gradient(ellipse 80% 80% at 50% 40%, #ffe066 0%, transparent 45%);
+            animation: citrusPattern 18s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        @keyframes citrusWave {
+            0%, 100% {
+                background-position: 0% 0%;
+                transform: rotate(0deg);
+            }
+            25% {
+                background-position: 100% 50%;
+                transform: rotate(0.5deg);
+            }
+            50% {
+                background-position: 50% 100%;
+                transform: rotate(-0.3deg);
+            }
+            75% {
+                background-position: 0% 50%;
+                transform: rotate(0.4deg);
+            }
+        }
+
+        @keyframes citrusPattern {
+            0%, 100% {
+                transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+                opacity: 0.5;
+            }
+            20% {
+                transform: translateX(12px) translateY(-8px) rotate(3deg) scale(1.2);
+                opacity: 0.7;
+            }
+            40% {
+                transform: translateX(-10px) translateY(15px) rotate(-2deg) scale(0.8);
+                opacity: 0.3;
+            }
+            60% {
+                transform: translateX(8px) translateY(-5px) rotate(4deg) scale(1.1);
+                opacity: 0.6;
+            }
+            80% {
+                transform: translateX(-6px) translateY(10px) rotate(-1deg) scale(0.9);
+                opacity: 0.4;
+            }
+        }
+
+        /* ===== STYLE ALÉATOIRE - "COSMIC CHAOS" ===== */
+        .project-modal-content-chaos {
+            background: linear-gradient(235deg,
+            #ffd6ec,
+            #d0b3ff,
+            #c3e8ff,
+            #bafff0,
+            #fff1a6,
+            #ffdfc0
+            );
+            background-size: 600% 600%;
+            animation: chaosWave 8s linear infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-modal-content-chaos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(ellipse 150% 50% at 0% 0%, #ffe3ec 0%, transparent 40%),
+                    radial-gradient(ellipse 50% 150% at 100% 100%, #f5ccff 0%, transparent 45%),
+                    radial-gradient(ellipse 200% 80% at 50% 0%, #d0ccff 0%, transparent 35%),
+                    radial-gradient(ellipse 80% 200% at 0% 100%, #cfd8ff 0%, transparent 50%),
+                    radial-gradient(ellipse 120% 120% at 100% 50%, #b2ebf2 0%, transparent 30%),
+                    radial-gradient(ellipse 100% 60% at 50% 100%, #ffecb3 0%, transparent 60%);
+            animation: chaosPattern 6s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        @keyframes chaosWave {
+            0% {
+                background-position: 0% 0%;
+                transform: rotate(0deg) skew(0deg);
+            }
+            25% {
+                background-position: 100% 25%;
+                transform: rotate(90deg) skew(2deg);
+            }
+            50% {
+                background-position: 75% 100%;
+                transform: rotate(180deg) skew(-1deg);
+            }
+            75% {
+                background-position: 25% 75%;
+                transform: rotate(270deg) skew(3deg);
+            }
+            100% {
+                background-position: 0% 0%;
+                transform: rotate(360deg) skew(0deg);
+            }
+        }
+
+        @keyframes chaosPattern {
+            0%, 100% {
+                transform: translateX(0) translateY(0) rotate(0deg) scale(1) skewX(0deg);
+                opacity: 0.7;
+            }
+            16% {
+                transform: translateX(20px) translateY(-15px) rotate(60deg) scale(1.5) skewX(10deg);
+                opacity: 0.3;
+            }
+            33% {
+                transform: translateX(-25px) translateY(20px) rotate(120deg) scale(0.7) skewX(-15deg);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translateX(15px) translateY(-30px) rotate(180deg) scale(1.3) skewX(5deg);
+                opacity: 0.4;
+            }
+            66% {
+                transform: translateX(-18px) translateY(25px) rotate(240deg) scale(0.8) skewX(-20deg);
+                opacity: 0.8;
+            }
+            83% {
+                transform: translateX(22px) translateY(-10px) rotate(300deg) scale(1.1) skewX(12deg);
+                opacity: 0.5;
+            }
+        }
+
+
+        /* Animation d'apparition */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Classes utiles pour forcer le texte foncé */
+        .dark-text {
+            color: #2c3e50 !important;
+            text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .dark-title {
+            color: #1a252f !important;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) !important;
+        }
+
+        /* Animation d'apparition */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Classes utiles pour forcer le texte foncé */
+        .dark-text {
+            color: #2c3e50 !important;
+            text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .dark-title {
+            color: #1a252f !important;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) !important;
+        }
+
+
+        .gallery-trigger {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-family: inherit;
+        }
+
+        .gallery-trigger:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: -80px;
+        }
+
+        .carousel-nav.next {
+            right: -80px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .image-counter {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 80%;
+            line-height: 1.4;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .portfolio-section h1 {
+                font-size: 2rem;
+            }
+
+            .carousel-container {
+                max-width: 95%;
+                padding: 1rem;
+            }
+
+            .carousel-image {
+                height: 300px;
+            }
+
+            .carousel-nav {
+                font-size: 1.5rem;
+                width: 50px;
+                height: 50px;
+            }
+
+            .carousel-nav.prev {
+                left: -60px;
+            }
+
+            .carousel-nav.next {
+                right: -60px;
+            }
+        }
+
+        /* Hover scaling and shadow */
+        .clickable-poster {
+            cursor: pointer;
+            display: block;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .clickable-poster:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        #carouselImage {
+            width: 600px;           /* or whatever fixed size you want */
+            height: 400px;
+            object-fit: contain;    /* scales image inside the rectangle without cropping */
+            background-color: #000; /* optional: background behind images */
+            display: block;
+            margin: 0 auto;
+        }
+        #carouselCaption {
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        #submersionBoxes{
+            width: 100%;
+            height: 100%;
+            grid-template-columns: 200px 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            column-gap: 10px;
+
+        }
+
+        #submersionText{
+            width: 40%;
+            height: 100%;
+        }
+
+        #submersionImage{
+            width: 55%;
+            height: 100%;
+            display: grid;
+            column-gap: 10px;
+            row-gap: 10px;
+
+        }
+
+        #c {
+            grid-column:3 ;
+            grid-row: 1 / 3;
+            margin: 0px;
+
+
+        }
+
+        #a {
+            grid-column: 2 ;
+            grid-row: 1 ;
+            margin: 0px;
+        }
+        #b {
+            grid-column: 2 ;
+            grid-row: 2;
+            margin: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="watercolor-bg">
+        <div class="ink-layer"></div>
+        <div class="ink-layer"></div>
+        <div class="ink-layer"></div>
+        <div class="ink-layer"></div>
+        <div class="ink-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+    <div class="vintage-overlay"></div>
+
+    <!-- Rivière de navigation -->
+    <div class="river-path">
+        <div class="river-flow"></div>
+        <div class="river-flow"></div>
+        <div class="river-flow"></div>
+        <div class="river-flow"></div>
+        <div class="river-flow"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <section class="portfolio-section header-section" onclick="openCarousel()" >
+            <h1>Juliette Le Meudec</h1>
+            <p class="subtitle">PhD Student in HCI in Bivwac Inria Research Team at Bordeaux </p>
+<!--            <button class="gallery-trigger" onclick="openCarousel()">Voir la galerie</button>-->
+        </section>
+
+        <!-- Modal Carousel -->
+        <div id="carouselModal" class="modal">
+            <div class="carousel-container">
+                <button class="close-btn" onclick="closeCarousel()">&times;</button>
+                <img id="carouselImage" class="carousel-image" src="" alt="Photo de galerie">
+                <p id="carouselCaption"></p>
+                <button class="carousel-nav prev" onclick="prevImage()">&#8249;</button>
+                <button class="carousel-nav next" onclick="nextImage()">&#8250;</button>
+                <div class="image-counter">
+                    <span id="currentImage">1</span> / <span id="totalImages">5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="portfolio-section about-section" onclick="openModal('aboutModal')">
+            <h2>About Me</h2>
+            <p> I'm interested in how technologies can support, reveal or enrich forms of collaboration, both spontaneous, creative or pedagogical. I care deeply about making knowledge more accessible and engaging, especially in cultural spaces like museums.</p>
+            <p style="font-style: italic; color: #666; margin-top: 1rem;">Click to learn more...</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="portfolio-section projects-section" onclick="openModal('projectsModal')">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" onclick="openProjectModal('treeamModal')">
+                    <h3>Treeam: an Immersive and Collaborative Serious Game About Trees and Forest</h3>
+                    <p> Published at IEEE VR 25 for 3DUI Contest</p>
+
+                </div>
+                <div class="project-card" onclick="openProjectModal('vrModal')">
+                    <h3>Conception and Implementation of  a VR creative-problem solving task</h3>
+                    <p> Published at IHM'24</p>
+                </div>
+            </div>
+            <p style="font-style: italic; color: #666; margin-top: 1rem;">Click to explore all projects...</p>
+        </section>
+
+        <!-- Teaching Section -->
+        <section class="portfolio-section teaching-section" onclick="openModal('teachingModal')">
+            <h2>Teaching</h2>
+            <ul>
+                <li><b>Philosophy and Science' Epistemology </b> - 2023 -> 2025</li>
+                <li><b>Numeric Certification</b> - 2024 -> 2025</li>
+                <li><b>Supervision of Master Project on Collaborative Storyboarding </b> - 2023 ->2024</li>
+            </ul>
+            <p style="font-style: italic; color: #666; margin-top: 1rem;">Click for detailed experience...</p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="portfolio-section experience-section" onclick="openModal('experienceModal')">
+            <h2>CV</h2>
+            <ul>
+                <li><b>PhD in HCI</b> - 2023 -> 2026</li>
+                <li><b>Computer Engineer</b> - 2023</li>
+                <li><b>Bachelor of Sociology</b> - 2022</li>
+            </ul>
+            <p style="font-style: italic; color: #666; margin-top: 1rem;">Click for detailed experience...</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="portfolio-section contact-section" onclick="window.open('https://bivwac.fr/people/le_meudec/', '_blank');">
+            <h2>To Reach Me</h2>
+            <p>Ready to collaborate on your next project?</p>
+            <div class="contact-links">
+                <a href="mailto:juliette.le-meudec@inria.fr">Email</a>
+                <a href="https://www.linkedin.com/in/juliette-le-meudec-968419251/" target="_blank">LinkedIn</a>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Modals -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('aboutModal')">&times;</button>
+            <h2>About Me</h2>
+            <p>With a background in UI/UX design, I am currently pursuing research in human-computer interaction (HCI), focusing on the study of collaborative dynamics between humans while using technologies.</p>
+            <p>I'm interested in how technologies can support, reveal or enrich forms of collaboration, both spontaneous, creative or pedagogical. I care deeply about making knowledge more accessible and engaging, especially in cultural spaces like museums.</p>
+            <p>Full of curiosity, I like to learn about all kinds of subjects and wish to bridge disciplines, spark meaningful dialogue, and make knowledge more accessible, more alive, and more shareable through sensitive and inclusive digital experiences.</p>
+        </div>
+    </div>
+
+    <div id="projectsModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('projectsModal')">&times;</button>
+            <h2>Projects</h2>
+            <div class="projects-inside-grid">
+                <div class="project-card project-modal-content-treeam" onclick="openProjectModal('treeamModal')">
+                    <h3>Treeam: an Immersive and Collaborative Serious Game About Trees and Forest</h3>
+                    <p>Published at IEEE VR 25 for 3DUI Contest</p>
+                </div>
+
+                <div class="project-card project-modal-content-vr" onclick="openProjectModal('vrModal')">
+                    <h3>Conception and Implementation of a VR creative-problem solving task</h3>
+                    <p>Published at IHM'24</p>
+                </div>
+                <div class="project-card project-modal-content-submersion" onclick="openProjectModal('submersionModal')">
+                    <h3>Creation of an Interactive and Immersive Art Exhibition</h3>
+                    <p>Implementation of immersion and interaction for the "SubMersion" exhibition of works by Jason DeCaires Taylor.</p>
+                </div>
+                <div class="project-card project-modal-content-artgame" onclick="openProjectModal('artgameModal')">
+                    <h3>Designing a video game for expressing art</h3>
+                    <p>Design and production of an educational and artistic Unreal game prototype as part of a research project.</p>
+                </div>
+                <div class="project-card project-modal-content-butterfly" onclick="openProjectModal('butterflyModal')">
+                    <h3>Butterfly : A VR Escape Game</h3>
+                    <p>Find the correct solution to leave each room and go to the next one, but be carefull, and don't forget the butterfly effect, your actions may have more consequences than what you think</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales spécifiques aux projets -->
+
+    <div id="treeamModal" class="modal">
+        <div class="modal-content project-modal-content-treeam">
+<!--            <button class="modal-close" onclick="closeModal('treeamModal')">&times;</button>-->
+            <h2>Treeam: Immersive Collaborative Forest Game</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/U5qsI5BwxgQ?si=SKbS9uzRYvJKFb0z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="float:right"></iframe>
+            <p><strong>Publication :</strong> IEEE VR 25 for 3DUI Contest
+                <a href="https://www.researchgate.net/publication/391133960_Treeam_an_Immersive_and_Collaborative_Serious_Game_About_Trees_and_Forest" target="_blank"> (Paper Link)</a>
+            </p>
+            <p>
+                More information on this project on
+            <a href="https://bivwac.fr/tools/treeam/" target="_blank"> Treeam page Project</a>
+                on Bivwac's research team website.
+            </p>
+            <p><strong>Context:</strong> This project explores collaborative learning through an immersive serious game focused on trees and forest ecosystems.</p>
+            <p>Treeam is a VR collaborative serious game conveying information about biophysical processes of trees reacting to dangers. <br>
+                By having players embodying the internal functioning of trees, we want to make people more aware about the way trees live, while playing an enjoyable game. Through what we call indirect-collaboration, we allow players to communicate and help each other in order for the forest to stay alive, while completing individual mini-games.  <br>
+                This project questions the tendency of humans to project their own behaviours on other entities. In Treeam, we challenge the concept of collaboration between trees. Indeed, for some experts, trees do not collaborate with each other. Instead, they are in competition for resources. Thus, applying anthropomorphism to these biophysical process can show limits. In the other hand, anthropomorphism may increase the empathy of humans toward trees, raising awareness and trigger the will to protect nature. This questioning leads us to a trade-off: is it better to have a scientific and precise explanation about trees or to include some anthropomorphism to nudge people toward more sustainable behaviours? Further research must be conducted to answer this question.  <br>
+            </p>
+
+            <p><strong>Impact:</strong> This work contributes to understanding how immersive technologies can enhance collaborative learning in environmental education, providing insights for future educational VR applications.</p>
+        </div>
+    </div>
+
+    <div id="vrModal" class="modal">
+        <div class="modal-content project-modal-content-vr">
+<!--            <button class="modal-close" onclick="closeModal('vrModal')">&times;</button>-->
+            <h2>VR Creative Problem-Solving Task</h2>
+            <div id="vrModalimage">
+                <p><img id="myPoster_creavr" src="poster-creavr.jpg" alt="Research Poster of VR Creative Problem-Solving Task" class="clickable-poster" style="float:right;width:25%;height:25%;margin-left: 10px; margin-bottom: 10px;" ></p>
+            </div>
+          <div id="vrModalText">
+                <p><strong>Publication:</strong> IHM'24 (Interface Humain-Machine)
+                    <a href="https://hal.science/LISN/hal-04487309v1" target="_blank"> (Paper Link)</a>
+                </p>
+
+                <p><strong>Context:</strong> Research project focusing on the conception and implementation of a virtual reality task for creative problem-solving.</p>
+                <p>We take an existing educational task designed specifically for creative problem solving, and adapt it for VR. <br>
+                    We build around this task a VR application that allows collaboration between two or more individuals engaging in problem solving.  <br>
+                    Our application provides a unique opportunity to study the collaborative processes involved in the specific context of learning, thereby opening new avenues to enhance educational experiences through VR.  <br>
+                </p>
+                  <p><strong>Impact:</strong> By bringing creative problem-solving into virtual reality, this project unlocks new ways to study and enhance collaborative learning.</p>
+          </div>
+
+
+            <!--            <p><strong>Contributions:</strong> This work provides empirical evidence on the effectiveness of VR for creative problem-solving and offers design guidelines for future VR creative applications.</p>-->
+        </div>
+    </div>
+
+    <div id="submersionModal" class="modal">
+        <div class="modal-content project-modal-content-submersion">
+        <!--<button class="modal-close" onclick="closeModal('submersionModal')">&times;</button>-->
+            <h2>SubMersion: Interactive Art Exhibition</h2>
+
+            <div id="submersionBoxes" >
+                <div id="submersionText">
+                    <p><strong>Context:</strong> Implementation of immersive and interactive technologies for an underwater sculpture art exhibition during engineer school</p>
+                    <p>People involved : </p>
+                    <p> The Submersion exhibition presented an immersive exploration of a virtual underwater environment, showing Jason DeCaires Taylor's underwater sculptures, that combined real-time 3D modeling, interactive digital sculptures, and spatialized aquatic soundscapes. This experimental installation was designed to examine how sensory perception, technological mediation, and artistic representation shape our collective imagination of subaquatic worlds. The project integrated methods from acoustic engineering, virtual reality development, and artistic creation, and was carried out within the framework of the Performing Water research program at Le Mans University.</p>
+
+                    <p><strong>Impact:</strong> This project demonstrates how technology can make art more accessible and engaging, particularly for artworks that are physically inaccessible to most visitors.</p>
+
+                    <p>
+                        More information on
+                        <a href="https://ensim.univ-lemans.fr/fr/actualites/agenda-2022/janvier-2022-1-1/exposition-submersion.html" target="_blank"> Submersion Exposition</a>
+                        on Le Mans Université website.
+                    </p>
+
+                </div>
+                <div id="submersionImage">
+                    <p id="c"><img id="myPoster_submersion" src="poster_submersion.jpg" alt="Research Poster of the Submersion Project" class="clickable-poster" style="width:100%;height:100%"></p>
+                    <p id="a"><iframe  src="https://www.youtube.com/embed/Bd4H13C9F04?si=JNVzQaQLW-Wllg53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="float:right;width:100%;height:100%">></iframe> </p>
+                    <p id="b"><img src="Jason-underwater.png" alt="Picture of the gameplay of the video game" class="clickable-poster" style="width:100%;height:100%"></p>
+                </div>
+                <!--            <p><img src="Submersion2.png" alt="Photography of the exhibition" style="float:right;width:15%;height:15%;"></p>-->
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="artgameModal" class="modal">
+        <div class="modal-content project-modal-content-artgame">
+<!--            <button class="modal-close" onclick="closeModal('artgameModal')">&times;</button>-->
+            <h2>Video Game for Artistic Expression</h2>
+            <p><img src="cltrs.jpg" alt="Picture of the gameplay of the video game" class="clickable-poster" style="float:right;width:40%;height:40%;margin-left: 10px; margin-bottom: 10px;"></p>
+
+            <p><strong>Context:</strong> Participation to the conception of the video game during an Erasmus at UQAC Univeristy (Chicoutimi, Canada)</p>
+            <p>People involved : </p>
+            <p> This project investigates how to deliberately integrate women's personal experiences into game design practices by developing a 3D poetic video game centered on female bodily pleasure, aiming to enrich and transform design methodologies for more inclusive representation.</p>
+
+            <p><strong>Impact:</strong> This project challenges dominant narrative in gamedesign by foregrounding women's embodied experiences.</p>
+
+            <p>
+                More information on
+                <a href="https://www.uqac.ca/praxis/projets-de-recherche/valoriser-et-transmettre-lexperience-vecue-des-femmes-dans-le-processus-de-design-de-jeux-video/" target="_blank"> this page</a>
+                .
+            </p>
+            <p>
+                You can find the
+                <a href="https://store.steampowered.com/app/3509860/CLTRS/?l=french" target="_blank"> game page</a>
+                on Steam.
+            </p>
+        </div>
+    </div>
+
+    <div id="butterflyModal" class="modal">
+        <div class="modal-content project-modal-content-butterfly">
+            <!--<button class="modal-close" onclick="closeModal('escapeGameModal')">&times;</button>-->
+            <h2>Butterfly : A VR Escape Game </h2>
+           <p> <iframe width="560" height="315" src="https://www.youtube.com/embed/SyB7XcNREOI?si=6sGzWwm1mC-cb0U_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="float:right;margin-left: 10px; margin-bottom: 10px;"></iframe></p>
+<!--            <p><img src="Butterfly-museum.png" alt="Research Poster of VR Creative Problem-Solving Task" class="clickable-poster" style="float: right  ;width:25%;height:25%;" ></p>-->
+
+            <!--
+<a href="https://www.youtube.com/watch?v=SyB7XcNREOI" target="_blank">-->
+<!--&lt;!&ndash;            <img src="Butterfly-museum.png" alt = "miniature Butterfly Game"  style="float:right;width:30%;height:30%;" />&ndash;&gt;-->
+<!--            </a>-->
+
+            <p><strong>Context:</strong> Creation of an immersive escape game during a conception of video games course in UQAC Univeristy (Chicoutimi, Canada)</p>
+            <p>People involved : </p>
+            <p> In this video game, you have to find the correct solution to leave each room and go to the next one, but be carefull, and don't forget the butterfly effect, your actions may have more consequences than what you think. There is a total of  5 escape rooms in this game and 4 different endings. To complete the game you must find every endings.</p>
+
+            <p><strong>Impact:</strong> Experience a thrilling escape game where your every action reshapes the story.</p>
+
+        </div>
+    </div>
+
+    <div id="experienceModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('experienceModal')">&times;</button>
+            <h2>Academic experience</h2>
+
+            <h3>HCI PhD - 2023 - 2026</h3>
+            <em>Inria Bordeaux</em>
+            <p>Study of human collaboration via immersive technologies in educational contexts, supervised by Arnaud Prouzeau and Anastasia Bezerianos, funded by the ANR ICARE.</p>
+
+            <h3>Computer Engineer - 2023</h3>
+            <em>ENSIM, Le Mans</em>
+            <p>Engineering degree in HCI</p>
+
+            <h3>Erasmus - 2022</h3>
+            <em>UQAC, Chicoutimi (Canada)</em>
+            <p>Specialization in Video Games and AI for one semester</p>
+
+            <h3>Bachelor of Sociology - 2022</h3>
+            <em>UNISTRA, Strasbourg</em>
+            <p>Training in sociology, ethnology option</p>
+
+            <h3>Bachelor of English  (LLCER) - 2021</h3>
+            <em>Le Mans université, Le Mans</em>
+            <p>Bachelor's degree in Foreign and Regional Languages, Literatures and Civilizations in English, teaching and research course</p>
+
+            <h3>B/L preparatory class (CPGE) - 2020</h3>
+            <em>SFX, Vannes</em>
+            <p>Preparatory class in Humanities and Social Sciences.
+                Training includes: Mathematics, Economics, Sociology, Literature, Philosophy, History, Geography, English</p>
+
+            <h3>Scientific Baccalaureate - 2018</h3>
+            <em>VHB, Rennes</em>
+            <p>European mention | Speciality in Mathematics</p>
+        </div>
+    </div>
+
+    <div id="teachingModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('teachingModal')">&times;</button>
+            <h2>Teaching</h2>
+
+            <h3>Philosophy and Science' Epistemology - 2023 -> 2025</h3>
+            <em>L2 & L3 - Bachelor of Mathemathics and Computing for Social Sciences (MIASHS)</em>
+            <p>CM & TD</p>
+
+            <h3>Numeric Certification - 2024 -> 2025</h3>
+            <em>L2 - Bachelor of Psychology</em>
+            <p>TD</p>
+
+
+            <h3>Supervision of Master Project on Collaborative Storyboarding - 2023 -> 2024</h3>
+            <em>M2 - Master of image and sound </em>
+            <p>Study of human collaboration via immersive technologies in educational contexts</p>
+
+
+            <h3>Scientific Method - 2023 -> 2024</h3>
+            <em>L1 - Bachelor of informatics</em>
+            <p>CM & TD</p>
+
+        </div>
+    </div>
+
+
+    <!-- The Modal for Zooming Posters  -->
+
+    <div id="imageModal" style="
+  display:none;
+  position:fixed;
+  z-index:1000;
+  padding-top:60px;
+  left:0; top:0;
+  width:100%; height:100%;
+  overflow:auto;
+  background-color: rgba(0,0,0,0.9);
+">
+  <span id="closeModal" style="
+    position:absolute;
+    top:20px;
+    right:35px;
+    color:#fff;
+    font-size:40px;
+    font-weight:bold;
+    cursor:pointer;
+  ">&times;</span>
+        <img id="modalImage" style="
+    margin:auto;
+    display:block;
+    max-width:90%;
+    max-height:90%;
+  ">
+    </div>
+
+</body>
+
+<script>
+
+    // To interact with different portfolio section when clicked
+
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+    }
+
+    function openProjectModal(modalId) {
+        // Fermer la modale des projets d'abord
+        // closeModal('projectsModal');
+        // Ouvrir la modale spécifique du projet
+        document.getElementById(modalId).classList.add('active');
+        //  setTimeout(() => {
+        //     openModal(modalId);
+        //  }, 600);
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.classList.remove('active');
+        }
+    }
+
+
+
+    // Select all sections you want draggable
+    const draggableSections = document.querySelectorAll('.portfolio-section');
+
+    draggableSections.forEach(section => {
+        let isDragging = false;
+        let startX, startY;
+
+        section.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            startY = e.clientY;
+            isDragging = false;
+
+            const offsetX = e.clientX - section.getBoundingClientRect().left;
+            const offsetY = e.clientY - section.getBoundingClientRect().top;
+
+            function onMouseMove(e) {
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+
+                if (!isDragging && (Math.abs(dx) > 5 || Math.abs(dy) > 5)) {
+                    isDragging = true;
+                }
+
+                if (isDragging) {
+                    section.style.left = (e.clientX - offsetX) + 'px';
+                    section.style.top = (e.clientY - offsetY) + 'px';
+                }
+            }
+
+            function onMouseUp(e) {
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+
+                if (isDragging) {
+                    // Prevent the click that would follow this drag
+                    section.addEventListener('click', preventClickOnce, true);
+                }
+            }
+
+            function preventClickOnce(e) {
+                e.stopImmediatePropagation();
+                e.preventDefault();
+                section.removeEventListener('click', preventClickOnce, true);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        });
+    });
+
+
+
+    // Carousel for pictures
+    const images = [
+        './Juliette-linkedin.jpg',
+        './photo-casqueVR.png',
+        './photo-ihm24.jpg',
+        './Submersion2.png',
+        './photo-ieeevr25.jpg',
+    ];
+
+    const captions = [
+        'Juliette Le Meudec',
+        'Photo with VR headset',
+        'IHM 2024 conference photo',
+        'Submersion project display',
+        'IEEE VR 2025 conference photo'
+    ];
+
+    let currentImageIndex = 0;
+    const modal = document.getElementById('carouselModal');
+    const carouselImage = document.getElementById('carouselImage');
+    const currentImageSpan = document.getElementById('currentImage');
+    const totalImagesSpan = document.getElementById('totalImages');
+
+    // Initialiser le compteur
+    totalImagesSpan.textContent = images.length;
+
+    function openCarousel() {
+        modal.classList.add('active');
+        currentImageIndex = 0;
+        updateImage();
+        document.body.style.overflow = 'hidden'; // Empêche le scroll
+    }
+
+    function closeCarousel() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restaure le scroll
+    }
+
+    function updateImage() {
+        carouselImage.src = images[currentImageIndex];
+        currentImageSpan.textContent = currentImageIndex + 1;
+
+        const captionElement = document.getElementById('carouselCaption');
+        captionElement.textContent = captions[currentImageIndex];
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateImage();
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateImage();
+    }
+
+    // Fermer avec Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeCarousel();
+        }
+    });
+
+    // Navigation avec les flèches du clavier
+    document.addEventListener('keydown', function(e) {
+        if (modal.classList.contains('active')) {
+            if (e.key === 'ArrowRight') {
+                nextImage();
+            } else if (e.key === 'ArrowLeft') {
+                prevImage();
+            }
+        }
+    });
+
+    // Fermer en cliquant à l'extérieur
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeCarousel();
+        }
+    });
+
+    // Part for clickable Poster images
+    // Get elements
+    var modalI = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    var closeBtn = document.getElementById("closeModal");
+
+    // Get all images with the class
+    var posters = document.querySelectorAll(".clickable-poster");
+
+    // Add click event to each poster
+    posters.forEach(function(poster) {
+        poster.onclick = function() {
+            modalI.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+        };
+    });
+
+    // Close modal when clicking the close button
+    closeBtn.onclick = function() {
+        modalI.style.display = "none";
+    };
+
+    // Close modal when clicking outside the image
+    modalI.onclick = function(e) {
+        if (e.target == modalI) {
+            modalI.style.display = "none";
+        }
+    };
+
+
+</script>
+</html>
