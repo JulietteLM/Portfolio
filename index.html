@@ -625,6 +625,25 @@
 
         /* Backgrounds ultra-clairs pour modales de projets - Texte foncé */
 
+        /* Replicated variant - Coral */
+        .project-modal-content-cubequest {
+            background: linear-gradient(135deg, #ffe8d6, #fff0e6, #fffbf5, #fffefe);
+            animation: butterflyPattern 22s ease-in-out infinite;
+            position: relative;
+            overflow: auto;
+        }
+
+        .project-modal-content-cubequest::before {
+
+            background: radial-gradient(ellipse 80% 120% at 20% 30%, #ffb399 0%, transparent 50%),
+            radial-gradient(ellipse 120% 80% at 80% 70%, #ff9d7a 0%, transparent 60%),
+            radial-gradient(ellipse 100% 100% at 50% 50%, #ffc4aa 0%, transparent 40%);
+            z-index: 1;
+            opacity: 0.4;
+        }
+
+
+
         .project-modal-content-treeam {
             background: linear-gradient(135deg,
             #e8f5e8,
@@ -636,6 +655,8 @@
             animation: greenWave 15s ease-in-out infinite;
             position: relative;
             overflow: auto;
+
+
         }
 
         .project-modal-content-treeam::before {
@@ -646,10 +667,10 @@
             right: 0;
             bottom: 0;
             background:
-                    radial-gradient(ellipse 80% 120% at 20% 30%, #d4f1d4 0%, transparent 50%),
-                    radial-gradient(ellipse 120% 80% at 80% 70%, #c8eec8 0%, transparent 60%),
-                    radial-gradient(ellipse 100% 100% at 50% 50%, #e0f7e0 0%, transparent 40%);
-            animation: leafPattern 10s ease-in-out infinite;
+                    radial-gradient(ellipse 120% 80% at 30% 20%, #d6f7b8 0%, transparent 50%),
+                    radial-gradient(ellipse 80% 150% at 70% 80%, #d7f9cb 0%, transparent 60%),
+                    radial-gradient(ellipse 100% 100% at 50% 50%, #e8fbdd 0%, transparent 40%);
+            animation: leafPattern 22s ease-in-out infinite;
             z-index: 1;
             opacity: 0.4;
         }
@@ -801,6 +822,7 @@
         }
 
         /* Styles pour le texte foncé */
+        .project-modal-content-cubequest >*,
         .project-modal-content-treeam > *,
         .project-modal-content-vr > *,
         .project-modal-content-submersion > *,
@@ -812,7 +834,7 @@
             color: #2c3e50; /* Texte foncé principal */
             text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.8); /* Ombre claire pour la lisibilité */
         }
-
+        .project-modal-content-cubequest h2,
         .project-modal-content-treeam h2,
         .project-modal-content-vr h2,
         .project-modal-content-submersion h2,
@@ -823,9 +845,14 @@
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
         }
 
+        .condition-modal-cubequest p,
+        .condition-modal-cubequest li {
+            color: #5a3d2d;
+        }
+
         .project-modal-content-treeam p,
         .project-modal-content-treeam li {
-            color: #2d5a3d; /* Vert foncé pour le thème nature */
+            color: #275036; /* Vert foncé pour le thème nature */
         }
 
         .project-modal-content-vr p,
@@ -852,19 +879,19 @@
         @keyframes greenWave {
             0%, 100% {
                 background-position: 0% 50%;
-                transform:  rotate(0deg);
+                transform: scale(1) rotate(0deg);
             }
             25% {
-                background-position: 100% 25%;
-                transform: rotate(0.2deg);
+                background-position: 30% 80%;
+                transform: scale(1.0001) rotate(0.2deg);
             }
             50% {
-                background-position: 75% 100%;
-                transform:  rotate(-0.2deg);
+                background-position: 100% 50%;
+                transform: scale(1.001) rotate(0.1deg);
             }
             75% {
-                background-position: 25% 75%;
-                transform:  rotate(0.2deg);
+                background-position: 70% 20%;
+                transform: scale(0.99) rotate(-0.1deg);
             }
         }
 
@@ -944,7 +971,7 @@
         @keyframes leafPattern {
             0%, 100% {
                 transform: translateX(0) translateY(0) rotate(0deg);
-                opacity: 1;
+                opacity: 0.7;
             }
             25% {
                 transform: translateX(5px) translateY(-3px) rotate(1deg);
@@ -1556,7 +1583,13 @@
         <!-- Projects Section -->
         <section class="portfolio-section projects-section" onclick="openModal('projectsModal')">
             <h2>Projects</h2>
+
             <div class="projects-grid">
+                <div class="project-card" onclick="openProjectModal('cubequestModal')">
+                    <h3>Shared, Replicated or Separated ? Study on VR Workspace Configurations for Collaboration</h3>
+                    <p> Published at ISMAR 25</p>
+
+                </div>
                 <div class="project-card" onclick="openProjectModal('treeamModal')">
                     <h3>Treeam: an Immersive and Collaborative Serious Game About Trees and Forest</h3>
                     <p> Published at IEEE VR 25 for 3DUI Contest</p>
@@ -1623,6 +1656,11 @@
             <button class="modal-close" onclick="closeModal('projectsModal')">&times;</button>
             <h2>Projects</h2>
             <div class="projects-inside-grid">
+                <div class="project-card project-modal-content-cubequest" onclick="openProjectModal('cubequestModal')">
+                    <h3>Shared, Replicated or Separated ? A Comparative Study of Virtual Workspace Configurations for Collaborative Hands-On Learning</h3>
+                    <p>Published at ISMAR 25 </p>
+                </div>
+
                 <div class="project-card project-modal-content-treeam" onclick="openProjectModal('treeamModal')">
                     <h3>Treeam: an Immersive and Collaborative Serious Game About Trees and Forest</h3>
                     <p>Published at IEEE VR 25 for 3DUI Contest</p>
@@ -1650,11 +1688,29 @@
 
     <!-- Modales spécifiques aux projets -->
 
+
+    <div id="cubequestModal" class="modal">
+        <div class="modal-content project-modal-content-cubequest">
+            <!--            <button class="modal-close" onclick="closeModal('treeamModal')">&times;</button>-->
+            <h2>Shared, Replicated or Separated ? A Comparative Study of Virtual Workspace Configurations for Collaborative Hands-On Learning</h2>
+            <p><strong>Publication :</strong> ISMAR 25
+                <a href="https://inria.hal.science/hal-05193514v1" target="_blank"> (Paper Link)</a>
+            </p>
+            <p>
+
+            </p>
+            <p><strong>Context:</strong> This project study different workspace configuration for collaborative learning in Virtual Reality.</p>
+            <p>Most work on collaborative immersive systems mimics real-world settings, using fully shared virtual workspaces that foster close collaboration. However, recent work in educational contexts using remote desktop environments suggests these shared approaches may not be optimal for learning, as it showed that individual workspaces lead to better learning outcomes. In this paper, we investigate whether individual workspaces also lead to better outcomes in a collaborative VR learning environment. We compare three distinct workspace configurations in a problem-solving task: (1) a fully shared environment where two users work on the same materials, (2) a replicated environment where each user has their own copy of the materials but can still see their partner and their workspace, and (3) a separated environment where users cannot see each other nor each other's workspace and each has individual materials. We evaluate how these configurations influenced collaborative interaction, problem-solving strategies, and learning. Our results suggest the replicated workspace reduced social experience and did not improve learning outcomes compared to the shared one, however, it allowed broader exploration of the problem space. </p>
+
+<!--            <p><strong>Impact:</strong> This work contributes to understanding how immersive technologies can enhance collaborative learning in environmental education, providing insights for future educational VR applications.</p>-->
+        </div>
+    </div>
+
     <div id="treeamModal" class="modal">
         <div class="modal-content project-modal-content-treeam">
 <!--            <button class="modal-close" onclick="closeModal('treeamModal')">&times;</button>-->
             <h2>Treeam: Immersive Collaborative Forest Game</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/U5qsI5BwxgQ?si=SKbS9uzRYvJKFb0z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="float:right"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/U5qsI5BwxgQ?si=SKbS9uzRYvJKFb0z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="float:right">[https://www.youtube.com/embed/U5qsI5BwxgQ?si=SKbS9uzRYvJKFb0z]</iframe>
             <p><strong>Publication :</strong> IEEE VR 25 for 3DUI Contest
                 <a href="https://www.researchgate.net/publication/391133960_Treeam_an_Immersive_and_Collaborative_Serious_Game_About_Trees_and_Forest" target="_blank"> (Paper Link)</a>
             </p>
@@ -1662,6 +1718,7 @@
                 More information on this project on
             <a href="https://bivwac.fr/tools/treeam/" target="_blank"> Treeam page Project</a>
                 on Bivwac's research team website.
+
             </p>
             <p><strong>Context:</strong> This project explores collaborative learning through an immersive serious game focused on trees and forest ecosystems.</p>
             <p>Treeam is a VR collaborative serious game conveying information about biophysical processes of trees reacting to dangers. <br>
