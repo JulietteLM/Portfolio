@@ -3,11 +3,17 @@ import { sections } from '@/stores/sections/section.ts'
 </script>
 
 <template>
-  <div>
+  <nav>
     <a v-for="section in sections" :key="section.id" :href="`#${section.id}`">
       {{ section.title }}
     </a>
-  </div>
+  </nav>
 </template>
 
-<style scoped></style>
+<style scoped>
+nav{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+</style>

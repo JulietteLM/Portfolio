@@ -8,14 +8,30 @@ import { sections } from '@/stores/sections/section.ts'
 </script>
 
 <template>
-  <main>
-    <About></About>
-    <Name></Name>
-    <Menu></Menu>
-    <Photo></Photo>
+  <Menu></Menu>
 
-    <Section v-for="section in sections" :key="section.title" :section="section">
-      {{ section.title }}
-    </Section>
+  <main>
+    <header>
+      <Photo></Photo>
+      <About></About>
+      <Name></Name>
+    </header>
+
+
+    <div class="area-section">
+      <Section v-for="section in sections" :key="section.title" :section="section">
+        {{ section.title }}
+      </Section>
+    </div>
   </main>
+
 </template>
+
+<style scoped>
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow: auto;
+}
+</style>
