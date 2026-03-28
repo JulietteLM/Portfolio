@@ -3,13 +3,9 @@
 <template>
   <h1>About me</h1>
   <p>
-    Maecenas velit arcu, rhoncus dignissim elit vel, aliquet iaculis ante. Fusce posuere dui ut
-    efficitur sagittis. Integer rutrum tincidunt lobortis. Cras risus dolor, dapibus non porttitor
-    nec, vulputate vel odio. Morbi mollis urna a pharetra posuere. Aliquam aliquam justo finibus
-    scelerisque elementum. Sed eget ex iaculis, sagittis eros at, blandit lorem. Etiam rutrum tempor
-    elit, vel accumsan est. Nunc id mollis massa. Morbi eu felis mi. Integer congue hendrerit odio
-    sit amet efficitur. Integer non mi dictum quam dapibus convallis. Aliquam porta nisl ac nunc
-    tempor ultricies sed a magna. Quisque elit leo, porta quis ultricies vitae, congue et dolor.
+    With a background in UI/UX design, I am currently pursuing research in human-computer interaction (HCI), focusing on the study of collaborative dynamics between humans while using technologies.
+    I'm interested in how technologies can support, reveal or enrich forms of collaboration, both spontaneous, creative or pedagogical. I care deeply about making knowledge more accessible and engaging, especially in cultural spaces like museums.
+    Full of curiosity, I like to learn about all kinds of subjects and wish to bridge disciplines, spark meaningful dialogue, and make knowledge more accessible, more alive, and more shareable through sensitive and inclusive digital experiences.
   </p>
 </template>
 
