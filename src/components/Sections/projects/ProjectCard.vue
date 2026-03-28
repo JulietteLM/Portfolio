@@ -21,6 +21,7 @@ const showMore = ref(false)
   <div class="container">
     <h2>{{ project.title }}</h2>
     <h3>{{ project.subtitle }}</h3>
+    <h4>{{ project.publication }}</h4>
 
     <button @click="toggleShowMore">Show {{ showMore ? 'Less' : 'More' }}</button>
 
