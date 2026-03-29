@@ -1,0 +1,13 @@
+$typography_keywords: display, headline, title, label, body;
+$typography_sizes: large, medium, small;
+
+@each $keyword in $typography-keywords {
+    @each $size in $typography_sizes {
+        .#{$keyword}-#{$size} {
+            font-size: var(--mdui-typescale-#{$keyword}-#{$size}-size);
+            font-weight: var(--mdui-typescale-#{$keyword}-#{$size}-weight);
+            line-height: var(--mdui-typescale-#{$keyword}-#{$size}-line-height);
+            letter-spacing: var(--mdui-typescale-#{$keyword}-#{$size}-tracking);
+        }
+    }
+}
