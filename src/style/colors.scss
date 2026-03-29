@@ -1,13 +1,28 @@
-$color_tokens: primary, primary-container, on-primary, primary-container, inverse-primary, secondary, on-secondary, on-secondary-container, tertiary, teriary-container, on-tertiary-container, surface, surface-dim, surface-bright, surface-container-lowest, surface-container-low, surface-container, surface-container-high, surface-container-highest, surface-variant, on-surface, on-surface-variant, inverse-surface, inverse-on-surface, background, on-background, error, error-container, on-error-container;
+$colors: (
+  primary: #6C5D2F,
+  primary-container: #A8996E,
+  on-primary: #FFFFFF,
+  secondary: #8B7E74,
+  surface: #F5F5F5,
+  on-surface: #1A1A1A,
+  error: #B3261E
+);
 
-@each $token in $color_tokens {
-    .#{$token} {
-        background-color: rgb(var(--mdui-color-#{$token}));
-    }
+@each $token, $value in $colors {
+  .#{$token} {
+    background-color: #{$value};
+  }
 
-
-    .#{$token}-text {
-        color: rgb(var(--mdui-color-#{$token}));
-    }
+  .#{$token}-text {
+    color: #{$value};
+  }
 }
 
+@function theme($name, $alpha: 1) {
+  $base: map-get($colors, $name);
+  @if $alpha == 1 {
+    @return $base;
+  } @else {
+    @return rgba($base, $alpha);
+  }
+}

@@ -9,7 +9,6 @@ export type Project = {
 }
 
 function loadProjects(): Array<Project> {
-
   const modules: Record<string, string> = import.meta.glob('../content/projects/*.md', {
     query: '?raw',
     import: 'default',
