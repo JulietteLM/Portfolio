@@ -7,6 +7,8 @@
 @forward 'colors';
 @forward 'text/index';
 @forward 'cursor';
+@forward 'border-radius';
+@forward "breakpoints";
 
 * {
     scrollbar-width: thin;
