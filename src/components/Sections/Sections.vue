@@ -7,11 +7,12 @@ import { sections } from '@/stores/sections.ts'
 
 <template>
 <div>
+  <Projects />
+
   <Section v-for="section in sections" :key="section.title" :section="section">
     {{ section.title }}
   </Section>
 
-  <Projects />
 </div>
 </template>
 
