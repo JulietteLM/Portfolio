@@ -1,0 +1,13 @@
+$color_tokens: primary, primary-container, on-primary, primary-container, inverse-primary, secondary, on-secondary, on-secondary-container, tertiary, teriary-container, on-tertiary-container, surface, surface-dim, surface-bright, surface-container-lowest, surface-container-low, surface-container, surface-container-high, surface-container-highest, surface-variant, on-surface, on-surface-variant, inverse-surface, inverse-on-surface, background, on-background, error, error-container, on-error-container;
+
+@each $token in $color_tokens {
+    .#{$token} {
+        background-color: rgb(var(--mdui-color-#{$token}));
+    }
+
+
+    .#{$token}-text {
+        color: rgb(var(--mdui-color-#{$token}));
+    }
+}
+

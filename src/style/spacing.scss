@@ -1,0 +1,41 @@
+@for $value from 1 through 8 {
+    $spacing_keywords: (t: top, b: bottom, l: left, r: right);
+    @each $short_keyword, $keyword in $spacing_keywords {
+        .p#{$short_keyword}-#{$value} {
+            padding-#{$keyword}: #{$value * 4}px;
+        }
+
+        .m#{$short_keyword}-#{$value} {
+            margin-#{$keyword}: #{$value * 4}px;
+        }
+    }
+
+    .ma-#{$value} {
+        margin: #{$value * 4}px;
+    }
+
+
+    .pa-#{$value} {
+        padding: #{$value * 4}px;
+    }
+
+    .px-#{$value} {
+        padding-left: #{$value * 4}px;
+        padding-right: #{$value * 4}px;
+    }
+
+    .py-#{$value} {
+        padding-top: #{$value * 4}px;
+        padding-bottom: #{$value * 4}px;
+    }
+
+    .mx-#{$value} {
+        margin-right: #{$value * 4}px;
+        margin-left: #{$value * 4}px;
+    }
+
+    .my-#{$value} {
+        margin-top: #{$value * 4}px;
+        margin-bottom: #{$value * 4}px;
+    }
+}

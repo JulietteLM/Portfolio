@@ -1,0 +1,7 @@
+$cursor_keywords: pointer, text, auto;
+
+@each $cursor in $cursor_keywords {
+    .cursor-#{$cursor} {
+        cursor: #{$cursor};
+    }
+}

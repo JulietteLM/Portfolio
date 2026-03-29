@@ -3,8 +3,7 @@ import About from '@/components/About.vue'
 import Name from '@/components/Name.vue'
 import Menu from '@/components/Menu.vue'
 import Photo from '@/components/Photo.vue'
-import Section from '@/components/Section.vue'
-import { sections } from '@/stores/sections/section.ts'
+import Sections from '@/components/Sections/Sections.vue'
 </script>
 
 <template>
@@ -17,12 +16,7 @@ import { sections } from '@/stores/sections/section.ts'
       <Name></Name>
     </header>
 
-
-    <div class="area-section">
-      <Section v-for="section in sections" :key="section.title" :section="section">
-        {{ section.title }}
-      </Section>
-    </div>
+    <Sections />
   </main>
 
 </template>

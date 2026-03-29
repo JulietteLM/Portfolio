@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { sections } from '@/stores/sections/section.ts'
+import { sections } from '@/stores/sections.ts'
 </script>
 
 <template>

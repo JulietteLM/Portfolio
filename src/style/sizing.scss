@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+$size_increment: 5;
+
+$size: 0;
+@while $size <= 100 {
+    .w-#{$size} {
+        width: #{$size}#{'%'};
+    }
+
+    .h-#{$size} {
+        height: #{$size}#{'%'};
+    }
+
+    $size: $size + $size_increment;
+}

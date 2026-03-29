@@ -1,0 +1,13 @@
+@forward 'reset';
+@forward 'display';
+@forward 'overflow';
+@forward 'spacing';
+@forward 'flex';
+@forward 'sizing';
+@forward 'colors';
+@forward 'text/index';
+@forward 'cursor';
+
+* {
+    scrollbar-width: thin;
+}

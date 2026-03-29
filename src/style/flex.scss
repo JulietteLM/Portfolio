@@ -1,0 +1,37 @@
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-1 {
+    flex-grow: 1;
+}
+
+.flex-0 {
+    flex-grow: 0;
+}
+
+@for $i from 1 through 8 {
+    .gap-#{$i} {
+        gap: #{$i * 4}px;
+    }
+}
+
+$flex_position_keywords: start, center, end;
+
+@each $flex_position in $flex_position_keywords {
+    .align-self-#{$flex_position} {
+        align-self: $flex_position;
+    }
+
+    .justify-#{$flex_position} {
+        justify-content: #{$flex_position};
+    }
+
+    .align-#{$flex_position} {
+        align-items: #{$flex_position};
+    }
+}

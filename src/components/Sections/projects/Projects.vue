@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import ProjectCard from '@/components/Sections/projects/ProjectCard.vue'
-import { projects } from '@/stores/sections/projects.ts'
+import { projects } from '@/stores/projects.ts'
 </script>
 
 <template>
