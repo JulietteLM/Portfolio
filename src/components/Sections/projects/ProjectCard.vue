@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { type IProject } from '@/stores/sections/projects.ts'
 import { nextTick, ref } from 'vue'
+import type { Project } from '@/stores/projects.ts'
 
-const props = defineProps<{ project: IProject }>()
+const props = defineProps<{ project: Project }>()
 
 function toggleShowMore() {
   showMore.value = !showMore.value
@@ -18,17 +18,14 @@ const showMore = ref(false)
 </script>
 
 <template>
-  <div class="container">
+  <article class="container">
     <h2>{{ project.title }}</h2>
-    <h3>{{ project.subtitle }}</h3>
     <h4>{{ project.publication }}</h4>
 
     <button @click="toggleShowMore">Show {{ showMore ? 'Less' : 'More' }}</button>
 
-    <div v-if="showMore" :id="`${project.id}-content`">
-      <p>{{ project.content }}</p>
-    </div>
-  </div>
+    <div v-html="project.html" v-if="showMore" :id="`${project.id}-content`"></div>
+  </article>
 </template>
 
 <style scoped>

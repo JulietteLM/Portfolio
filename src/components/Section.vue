@@ -1,16 +1,12 @@
 <script lang="ts" setup>
-import { type ISection } from '@/stores/sections/section.ts'
 
-defineProps<{ section: ISection }>()
+import type { Section } from '@/stores/sections.ts'
+
+defineProps<{ section: Section }>()
 </script>
 
 <template>
-  <div :id="section.id">
-    <h1>{{ section.title }}</h1>
-
-    <Component :is="section.component" v-if="section.component" />
-    <p v-if="section.paragraph">{{ section.paragraph }}</p>
-  </div>
+  <section v-html="section.html" :id="section.id" :section="section.id"/>
 </template>
 
 <style scoped></style>
