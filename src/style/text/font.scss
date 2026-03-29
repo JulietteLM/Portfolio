@@ -1,3 +1,19 @@
+@use '../colors' as *;
+@import url('https://fonts.googleapis.com/css2?family=Actor&family=Esteban&family=Gafata&display=swap');
+
+
 *:not(mdui-icon) {
-    font-family: Roboto, sans-serif;
+    font-family: Actor, sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: Esteban, sans-serif;
+  font-weight: 500;
+  color:theme(primary);
+}
+
+h2 {
+  font-family: Gafata, sans-serif;
+  font-weight: 500;
 }

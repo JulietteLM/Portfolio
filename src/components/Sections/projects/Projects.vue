@@ -9,4 +9,13 @@ import { projects } from '@/stores/projects.ts'
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+div{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+</style>

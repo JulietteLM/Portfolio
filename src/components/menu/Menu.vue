@@ -28,7 +28,7 @@ const menuOpened = ref(false)
 @use '@/style/breakpoints' as *;
 
 .menu {
-  color: theme(on-primary);
+  color: theme(on-secondary);
   position: fixed;
 
   .content {
@@ -36,7 +36,7 @@ const menuOpened = ref(false)
     flex-direction: column;
   }
 
-  .menu-button {
+  .menu-button{
     margin: 8px;
   }
 
@@ -49,15 +49,15 @@ const menuOpened = ref(false)
   // Big screens
   @include respond-min(sm) {
     position: fixed;
-    left: 8px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
 
-    background-color: theme(primary);
+    background-color: theme(secondary);
     width: fit-content;
 
     border-radius: 8px;
-    padding: 4px;
+    padding: 12px;
 
     .menu-button, .close-button {
       display: none;
@@ -77,7 +77,7 @@ const menuOpened = ref(false)
     }
 
     &.open {
-      background-color: theme(primary, 0.8);
+      background-color: theme(secondary, 0.8);
       backdrop-filter: blur(2px);
 
       width: 100% !important;

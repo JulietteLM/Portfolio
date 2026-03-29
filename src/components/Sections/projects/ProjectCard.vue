@@ -19,6 +19,7 @@ const showMore = ref(false)
 
 <template>
   <article class="container">
+    <img :src="project.cover"/>
     <h2>{{ project.title }}</h2>
     <h4>{{ project.publication }}</h4>
 
@@ -32,5 +33,10 @@ const showMore = ref(false)
 .container {
   display: flex;
   flex-direction: column;
+}
+
+img{
+  aspect-ratio: 1/1;
+  max-width: 300px;
 }
 </style>

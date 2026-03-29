@@ -1,13 +1,13 @@
 $colors: (
-  primary: #6C5D2F,
+  primary: #8F4C38,
   primary-container: #A8996E,
   on-primary: #FFFFFF,
-  secondary: #8B7E74,
+  secondary: #6C5D2F,
+  on-secondary: #FFFFFF,
   surface: #F5F5F5,
   on-surface: #1A1A1A,
   error: #B3261E
 );
-
 @each $token, $value in $colors {
   .#{$token} {
     background-color: #{$value};
