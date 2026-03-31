@@ -14,11 +14,24 @@ const menuOpened = ref(false)
     <button @click="menuOpened=false">X</button>
     </div>
 
-    <div class="content">
-      <a v-for="section in sections" :key="section.id" :href="`#${section.id}`" @click="menuOpened = false">
-        {{ section.title }}
-      </a>
 
+
+    <div class="content">
+      <a href="#about-me" @click="menuOpened = false">
+        <h2> About Me</h2>
+      </a>
+      <a href="#projects" @click="menuOpened = false">
+        <h2> Projects</h2>
+      </a>
+      <a href="#academic" @click="menuOpened = false">
+        <h2> Academic</h2>
+      </a>
+      <a href="#teaching" @click="menuOpened = false">
+        <h2>Teaching</h2>
+      </a>
+      <a v-for="section in sections" :key="section.id" :href="`#${section.id}`" @click="menuOpened = false">
+        <h2> {{ section.title }}</h2>
+      </a>
     </div>
   </nav>
 </template>
@@ -48,12 +61,16 @@ const menuOpened = ref(false)
 
   // Big screens
   @include respond-min(sm) {
+    font-size: large;
+    color: black;
+
+
     position: fixed;
-    left: 12px;
+    left: 48px;
     top: 50%;
     transform: translateY(-50%);
 
-    background-color: theme(secondary);
+    //background-color: theme(secondary);
     width: fit-content;
 
     border-radius: 8px;

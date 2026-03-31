@@ -2,13 +2,18 @@
 
 import Section from '@/components/Section.vue'
 import Projects from '@/components/Sections/projects/Projects.vue'
+import Academics from '@/components/Sections/Academics.vue'
 import { sections } from '@/stores/sections.ts'
+import Teachings from '@/components/Sections/Teachings.vue'
+import About from '@/components/About.vue'
 </script>
 
 <template>
 <div>
+  <About/>
   <Projects />
-
+  <Academics />
+<Teachings />
   <Section v-for="section in sections" :key="section.title" :section="section">
     {{ section.title }}
   </Section>

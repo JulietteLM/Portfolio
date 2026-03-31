@@ -37,7 +37,7 @@ function onClick() {
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
-  background-color: theme(on-primary);
+  background-color: theme(secondary);
   margin: 6px 0;
   transition: 0.4s;
 

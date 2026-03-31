@@ -8,14 +8,13 @@ import Sections from '@/components/Sections/Sections.vue'
 
 <template>
   <Menu></Menu>
-<div class="main-container">
 
+  <header>
+    <Photo></Photo>
+    <Name></Name>
+  </header>
+  <div class="main-container">
   <main>
-    <header>
-      <Name></Name>
-      <Photo></Photo>
-      <About></About>
-    </header>
 
     <Sections class="sections" />
   </main>
@@ -43,9 +42,16 @@ main {
 }
 
 .main-container {
+  margin-top: 48px ;
   display: flex;
   justify-content: center;
 
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
 }
 
 .sections {
