@@ -36,7 +36,10 @@ const showMore = ref(false)
 }
 
 img{
-  aspect-ratio: 1/1;
-  max-width: 300px;
+  //aspect-ratio: 2/1;
+  height: 100%;
+  width: 100%;
+  max-height: 200px;
+  //max-width: 400px;
 }
 </style>

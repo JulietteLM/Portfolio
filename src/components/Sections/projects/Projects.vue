@@ -4,6 +4,7 @@ import { projects } from '@/stores/projects.ts'
 </script>
 
 <template>
+  <h1 id="projects">Projects</h1>
   <div>
     <ProjectCard v-for="project in projects" :key="project.id" :project="project"></ProjectCard>
   </div>
