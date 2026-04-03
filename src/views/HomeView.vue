@@ -9,22 +9,30 @@ import Sections from '@/components/Sections/Sections.vue'
 <template>
   <Menu></Menu>
 
-  <header>
-    <Photo></Photo>
-    <Name></Name>
-  </header>
-  <div class="main-container">
-  <main>
+  <div class="full-app">
+    <header>
+      <Photo></Photo>
+      <Name></Name>
+    </header>
 
+
+  <main>
     <Sections class="sections" />
   </main>
 </div>
+
 
 
 </template>
 
 <style scoped lang="scss">
 @use '@/style/breakpoints' as *;
+
+.full-app{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 main {
   display: flex;
@@ -37,23 +45,32 @@ main {
     margin-left: 200px;
     margin-right: 200px;
   }
-
+  height: calc(100vh - 216px);
   max-width: 1000px;
+  margin-top: 200px;
 }
 
-.main-container {
-  margin-top: 48px ;
-  display: flex;
-  justify-content: center;
-
-}
+//.main-container {
+//  //margin-top: 64px ;
+//  display: flex;
+//  justify-content: center;
+//
+//
+//}
 
 header{
+
   display: flex;
   flex-direction: row;
   align-items: start;
+  width: 100%;
+  //margin-top: -64px;
+
+  position: fixed;
+  z-index: 1000;
+  background: #FFF8F6;
+
 }
 
-.sections {
-}
+
 </style>

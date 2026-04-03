@@ -76,6 +76,7 @@ const menuOpened = ref(false)
     border-radius: 8px;
     padding: 12px;
 
+
     .menu-button, .close-button {
       display: none;
     }
