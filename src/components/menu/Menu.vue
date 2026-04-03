@@ -43,6 +43,8 @@ const menuOpened = ref(false)
 .menu {
   color: theme(on-secondary);
   position: fixed;
+  right: 8px;
+  z-index: 10;
 
   .content {
     display: flex;

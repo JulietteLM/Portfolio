@@ -67,7 +67,7 @@ header{
   //margin-top: -64px;
 
   position: fixed;
-  z-index: 1000;
+  z-index: 5;
   background: #FFF8F6;
 
 }
