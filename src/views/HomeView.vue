@@ -45,9 +45,9 @@ main {
     margin-left: 200px;
     margin-right: 200px;
   }
-  height: calc(100vh - 216px);
+  height: calc(100vh - 264px);
   max-width: 1000px;
-  margin-top: 200px;
+  margin-top: 264px;
 }
 
 //.main-container {
