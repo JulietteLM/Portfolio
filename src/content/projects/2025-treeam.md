@@ -7,6 +7,12 @@ cover: /public/treeam-picture.png
 
 ## An Immersive and Collaborative Serious Game About Trees and Forest
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+### Publication : IEEE VR 25 for 3DUI Contest (Paper Link https://www.researchgate.net/publication/391133960_Treeam_an_Immersive_and_Collaborative_Serious_Game_About_Trees_and_Forest)
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+This project explores collaborative learning through an immersive serious game focused on trees and forest ecosystems.
+
+Treeam is a VR collaborative serious game conveying information about biophysical processes of trees reacting to dangers.
+By having players embodying the internal functioning of trees, we want to make people more aware about the way trees live, while playing an enjoyable game. Through what we call indirect-collaboration, we allow players to communicate and help each other in order for the forest to stay alive, while completing individual mini-games.
+This project questions the tendency of humans to project their own behaviours on other entities. In Treeam, we challenge the concept of collaboration between trees. Indeed, for some experts, trees do not collaborate with each other. Instead, they are in competition for resources. Thus, applying anthropomorphism to these biophysical process can show limits. In the other hand, anthropomorphism may increase the empathy of humans toward trees, raising awareness and trigger the will to protect nature. This questioning leads us to a trade-off: is it better to have a scientific and precise explanation about trees or to include some anthropomorphism to nudge people toward more sustainable behaviours? Further research must be conducted to answer this question. 
+
+More information on this project on Treeam page Project https://bivwac.fr/tools/treeam/ on Bivwac's research team website. 
