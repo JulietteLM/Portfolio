@@ -24,4 +24,4 @@ function loadProjects(): Array<Project> {
   }))
 }
 
-export const projects = loadProjects()
+export const projects = loadProjects().reverse()

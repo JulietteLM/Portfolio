@@ -7,6 +7,8 @@ cover: /public/jason-underwater.png
 
 ## Creation of an Interactive and Immersive Art Exhibition
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+With Submersion, we designed and implemented immersive and interactive technologies for an underwater sculpture art exhibition during engineer school.
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+The Submersion exhibition presented an immersive exploration of a virtual underwater environment, showing Jason DeCaires Taylor's underwater sculptures, that combined real-time 3D modeling, interactive digital sculptures, and spatialized aquatic soundscapes. This experimental installation was designed to examine how sensory perception, technological mediation, and artistic representation shape our collective imagination of subaquatic worlds. The project integrated methods from acoustic engineering, virtual reality development, and artistic creation, and was carried out within the framework of the Performing Water research program at Le Mans University.
+
+More information on Submersion Exposition https://ensim.univ-lemans.fr/fr/actualites/agenda-2022/janvier-2022-1-1/exposition-submersion.html on Le Mans Université website. 

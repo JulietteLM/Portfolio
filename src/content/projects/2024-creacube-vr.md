@@ -1,5 +1,5 @@
 ---
-title: A VR creative problem solving task
+title: Conception and Implementation of a VR CPS task
 publication: IHM'24
 year: 2024
 cover: /public/website-test-creacubeVR.png
@@ -7,6 +7,8 @@ cover: /public/website-test-creacubeVR.png
 
 ## Learning with immersive technologies : a VR task to study collaborative learning
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+### Publication: IHM'24 (https://hal.science/LISN/hal-04487309v1)
+In this project, we take an existing educational task designed specifically for creative problem-solving, and adapt it for VR.
+We build around this task a VR application that allows collaboration between two or more individuals engaging in problem-solving.
+Our application provides a unique opportunity to study the collaborative processes involved in the specific context of learning, thereby opening new avenues to enhance educational experiences through VR.
+By bringing creative problem-solving into virtual reality, this project unlocks new ways to study and enhance collaborative learning.

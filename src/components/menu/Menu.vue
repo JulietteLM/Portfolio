@@ -2,6 +2,7 @@
 import { sections } from '@/stores/sections.ts'
 import { ref } from 'vue'
 import MenuButton from '@/components/menu/MenuButton.vue'
+import Publications from '@/components/Sections/Publications.vue'
 
 const menuOpened = ref(false)
 </script>
@@ -19,6 +20,9 @@ const menuOpened = ref(false)
     <div class="content">
       <a href="#about-me" @click="menuOpened = false">
         <h2> About Me</h2>
+      </a>
+      <a href="#publication" @click="menuOpened = false">
+        <h2> Publications</h2>
       </a>
       <a href="#projects" @click="menuOpened = false">
         <h2> Projects</h2>
