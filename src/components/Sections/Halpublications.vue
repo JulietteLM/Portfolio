@@ -9,18 +9,18 @@
       <template v-if="isStructQuery">
         <template v-for="(typePapers, type) in group" :key="type">
           <h6 class="publication-type">
-            {{ translateType(type) }}
-            <span>({{ typePapers.length }})</span>
+            {{ translateType(String(type)) }}
+            <span>({{ (typePapers as any[]).length }})</span>
           </h6>
-          <PaperCard v-for="paper in typePapers" :key="paper.docid" :paper="paper" />
+          <PaperCard v-for="paper in (typePapers as any[])" :key="(paper as any).docid" :paper="(paper as any)" />
         </template>
       </template>
 
       <template v-else>
         <PaperCard
-          v-for="paper in Object.values(group).flat()"
-          :key="paper.docid"
-          :paper="paper"
+          v-for="paper in (Object.values(group) as any[]).flat()"
+          :key="(paper as any).docid"
+          :paper="(paper as any)"
         />
       </template>
     </template>
@@ -51,7 +51,7 @@ const PRIORITY = [
   'POSTER', 'PRESCONF', 'REPORT', 'BLOG', 'OTHER',
 ]
 
-const LABELS = {
+const LABELS: Record<string, { en: string; fr: string }> = {
   ART:         { en: 'Journal Articles',                fr: 'Articles de revue' },
   COMM:        { en: 'Conference Articles',             fr: 'Articles de congrès' },
   THESE:       { en: 'PhD Theses',                      fr: 'Thèses de doctorat' },
@@ -83,9 +83,9 @@ const HAL_FIELDS = [
 
 // ─── State ────────────────────────────────────────────────────────────────────
 
-const papers = ref([])
+const papers = ref<any[]>([])
 const loading = ref(false)
-const error = ref(null)
+const error = ref<string | null>(null)
 
 // ─── Computed ─────────────────────────────────────────────────────────────────
 
@@ -101,13 +101,13 @@ const isStructQuery = computed(() => query.value.includes('structId_i'))
 const startYear = computed(() => (isStructQuery.value ? 2021 : 1900))
 
 const sortedPapers = computed(() =>
-  [...papers.value].sort((a, b) =>
+  [...papers.value].sort((a: any, b: any) =>
     a.publicationDateY_i - b.publicationDateY_i
   )
 )
 
 const groupedPapers = computed(() => {
-  const result = {};
+  const result: Record<string, Record<string, any[]>> = {}
   for (const paper of sortedPapers.value) {
     const year = paper.publicationDateY_i
     const type = paper.docType_s
@@ -115,12 +115,11 @@ const groupedPapers = computed(() => {
     if (!result[year][type]) result[year][type] = []
     result[year][type].push(paper)
   }
-
-  return result;
+  return result
 })
 
 const countByYear = computed(() => {
-  const counts = {}
+  const counts: Record<string, number> = {}
   for (const [year, types] of Object.entries(groupedPapers.value)) {
     counts[year] = Object.values(types).flat().length
   }
@@ -129,8 +128,8 @@ const countByYear = computed(() => {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function translateType(type) {
-  return LABELS[type]?.[props.lang] ?? type
+function translateType(type: string): string {
+  return LABELS[type]?.[props.lang as 'en' | 'fr'] ?? type
 }
 
 // ─── Data fetching ────────────────────────────────────────────────────────────
@@ -158,7 +157,7 @@ async function fetchPublications() {
     if (!res.ok) throw new Error(`HAL API error: ${res.status}`)
     const data = await res.json()
     papers.value = data.response?.docs ?? []
-  } catch (e) {
+  } catch (e: any) {
     error.value = e.message
   } finally {
     loading.value = false

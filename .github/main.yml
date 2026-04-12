@@ -2,7 +2,7 @@ name: Build and Deploy Vue Application to Github Pages
 on:
   push:
     branch:
-      -Portfolio/tree/WebsiteVue
+      --tree/WebsiteVue
 #    https://github:com/JulietteLM/Portfolio/tree/WebsiteVue:
 jobs:
   build_deploy_vue:
