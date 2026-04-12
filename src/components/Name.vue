@@ -5,7 +5,7 @@
   <div class="presentation">
     <h1>Juliette <br>&emsp; Le Meudec</h1>
     <div class="sub-name">
-      <p class="content"> Currently in 3rd year of PhD in the Bivwac Inria Team. Looking for a post-doc for 2027  </p>
+      <p class="content"> Currently in my final year of PhD (3rd year) in the HCI Bivwac Inria Team, <u>I am looking for a post-doc for 2027 </u>.</p>
     </div>
   </div>
 </template>
