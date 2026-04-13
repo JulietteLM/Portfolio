@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <img alt="A photo of me" src="juliette-picture.jpg" />
+  <img alt="A photo of me" src="/juliette-picture.jpg" />
 </template>
 
 <style scoped>
