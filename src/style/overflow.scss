@@ -1,8 +1,0 @@
-$overflow_keywords: auto, visible, hidden;
-
-@each $keyword in $overflow_keywords {
-    .overflow-auto {
-        overflow: #{$keyword};
-    }
-}
-
