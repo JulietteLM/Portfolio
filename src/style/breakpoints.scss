@@ -1,0 +1,37 @@
+// src/styles/breakpoints.scss
+
+// Define your breakpoint sizes
+$breakpoints: (
+  xs: 0,      // extra small, phones
+  sm: 640px,  // small, tablets
+  md: 768px,  // medium, small laptops
+  lg: 1024px, // large, desktops
+  xl: 1280px, // extra large
+  '2xl': 1536px
+);
+
+// Function to get a breakpoint
+@function bp($size) {
+  @return map-get($breakpoints, $size);
+}
+
+// Mixin for media queries (min-width)
+@mixin respond-min($size) {
+  @media (min-width: bp($size)) {
+    @content;
+  }
+}
+
+// Mixin for media queries (max-width)
+@mixin respond-max($size) {
+  @media (max-width: bp($size)) {
+    @content;
+  }
+}
+
+// Optional: shorthand mixin for range (min to max)
+@mixin respond-range($min, $max) {
+  @media (min-width: bp($min)) and (max-width: bp($max)) {
+    @content;
+  }
+}
