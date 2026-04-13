@@ -12,7 +12,8 @@
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "deploy": "npm run build && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "markdown-it-metadata-block": "^1.0.6",

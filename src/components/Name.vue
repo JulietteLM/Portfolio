@@ -16,7 +16,7 @@
 
   display: flex;
   flex-direction: column;
-  margin: 8px 16px 8px 0;
+  margin: 8px 16px 8px 24px;
 ;
 
 }

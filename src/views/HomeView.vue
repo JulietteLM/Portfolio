@@ -15,20 +15,16 @@ import Sections from '@/components/Sections/Sections.vue'
       <Name></Name>
     </header>
 
-
-  <main>
-    <Sections class="sections" />
-  </main>
-</div>
-
-
-
+    <main>
+      <Sections class="sections" />
+    </main>
+  </div>
 </template>
 
 <style scoped lang="scss">
 @use '@/style/breakpoints' as *;
 
-.full-app{
+.full-app {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -41,13 +37,15 @@ main {
   gap: 32px;
   overflow: auto;
   padding: 8px;
+
   @include respond-min(sm) {
     margin-left: 200px;
     margin-right: 200px;
+    margin-top: 264px;
   }
+
   height: calc(100vh - 264px);
   max-width: 1000px;
-  margin-top: 264px;
 }
 
 //.main-container {
@@ -58,19 +56,20 @@ main {
 //
 //}
 
-header{
-
+header {
   display: flex;
   flex-direction: row;
   align-items: start;
   width: 100%;
   //margin-top: -64px;
+  flex-wrap: wrap;
 
-  position: fixed;
-  z-index: 5;
-  background: #FFF8F6;
+  @include respond-min(sm) {
+    position: fixed;
+    z-index: 5;
+    flex-wrap: inherit;
+  }
 
+  background: #fff8f6;
 }
-
-
 </style>
