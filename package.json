@@ -13,7 +13,7 @@
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
     "format": "prettier --write --experimental-cli src/",
-    "deploy": "npm run build && git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run build && git add dist && git commit -m \"Built application\" && git push && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "markdown-it-metadata-block": "^1.0.6",
