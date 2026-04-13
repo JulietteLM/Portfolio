@@ -2,7 +2,7 @@
 title: SubMersion
 year: 2022
 publication: Master 1 Project
-cover: /public/jason-underwater.png
+cover: jason-underwater.png
 ---
 
 ## Creation of an Interactive and Immersive Art Exhibition

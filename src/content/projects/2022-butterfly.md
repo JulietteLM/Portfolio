@@ -2,7 +2,7 @@
 title: Butterfly, A VR Escape Game
 year: 2022
 publication: Master 2 Project
-cover: /public/butterfly-museum.png
+cover: butterfly-museum.png
 ---
 
 ## Creation of an immersive escape game

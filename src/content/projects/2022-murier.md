@@ -2,7 +2,7 @@
 title: Video Game for Artistic Expression
 publication: Master 2 Project
 year: 2022
-cover: /public/cltrs.jpg
+cover: cltrs.jpg
 ---
 
 ## Conception of a video game for expressing art in an inclusive way
